@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sunnap.finals.dao.VehicleMapper">
+
+    <select id="desc" parameterType="String" resultType="ReserveDto">
+        SELECT * FROM vehicle v LEFT JOIN review r on v.id = r.vehicleId LEFT JOIN user u on u.email = r.userEmail
+                 WHERE v.name= #{name}
+
+
+    </select>
+
+</mapper>

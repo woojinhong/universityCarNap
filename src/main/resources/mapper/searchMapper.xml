@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sunnap.finals.dao.SearchMapper">
+
+    <select id="search" parameterType="map" resultType="SearchDto">
+        <![CDATA[
+    SELECT * FROM vehicle
+    LEFT JOIN category c on c.name = vehicle.categoryName
+    WHERE c.name = #{category}
+    ]]>
+        <if test="option == 'top'">
+            <![CDATA[ORDER BY rating DESC]]>
+        </if>
+        <if test="option == 'lowest'">
+            <![CDATA[ORDER BY price ASC]]>
+        </if>
+        <if test="option == 'highest'">
+            <![CDATA[ORDER BY price DESC]]>
+        </if>
+        <if test="option == 'default'">
+            <![CDATA[ORDER BY regDate DESC]]>
+        </if>
+    </select>
+</mapper>
