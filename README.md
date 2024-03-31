@@ -11,8 +11,8 @@ The scope of this project encompasses the investigation and implementation of an
 
 ## Content
   - [Introduction](#Introduction) 
-  - [Data Flow](#Data Flow)
-  - [Project Desc](#Project Desc)
+  - [Data Flow](#Data-Flow)
+  - [Project Desc](#Project-Desc)
 
 
 ## Introduction
